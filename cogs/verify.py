@@ -11,7 +11,7 @@ class Verification(commands.Cog):
         # Generate a random math equation
         num1 = random.randint(1, 999)
         num2 = random.randint(1, 999)
-        operator = random.choice(['+', '-', '*'])
+        operator = random.choice(['+', '*'])
         equation = f"{num1} {operator} {num2}"
 
         # Calculate the result
@@ -40,12 +40,11 @@ class Verification(commands.Cog):
             role = discord.utils.get(ctx.guild.roles, name="Mayhem Player")
             if role:
                 await ctx.author.add_roles(role)  # Assign the role to the user
-                await ctx.respond("Verification successful! You've been granted the Verified role.")
+                await ctx.send("Verification successful! You've been granted the Verified role.")
             else:
-                await ctx.respond("Verification successful! However, the 'Verified' role is not found. Please contact a server administrator.")
+                await ctx.send("Verification successful! However, the 'Verified' role is not found. Please contact a server administrator.")
         else:
-            await ctx.respond("Incorrect answer. Please try again.")
-
+            await ctx.send("Incorrect answer. Please try again.")
 
 def setup(bot):
     bot.add_cog(Verification(bot))
