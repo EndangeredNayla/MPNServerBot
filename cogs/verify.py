@@ -6,7 +6,7 @@ class Verification(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command()
+    @commands.command()
     async def verify(self, ctx):
         # Generate a random math equation
         num1 = random.randint(1, 999)
@@ -40,11 +40,11 @@ class Verification(commands.Cog):
             role = discord.utils.get(ctx.guild.roles, name="Mayhem Player")
             if role:
                 await ctx.author.add_roles(role)  # Assign the role to the user
-                await ctx.send("Verification successful! You've been granted the Verified role.")
+                await ctx.author.send("Verification successful! You've been granted the Verified role.")
             else:
-                await ctx.send("Verification successful! However, the 'Verified' role is not found. Please contact a server administrator.")
+                await ctx.author.send("Verification successful! However, the 'Verified' role is not found. Please contact a server administrator.")
         else:
-            await ctx.send("Incorrect answer. Please try again.")
+            await ctx.author.send("Incorrect answer. Please try again.")
 
 def setup(bot):
     bot.add_cog(Verification(bot))
