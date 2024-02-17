@@ -16,6 +16,7 @@ from cogs.base import Base
 from cogs.fun import Fun
 from cogs.marioparty import MarioParty
 from cogs.toontown import Toontown
+from cogs.verify import Verification
 
 from discord.ext import tasks
 from discord.ext import commands
@@ -53,8 +54,9 @@ bot.add_cog(Base(bot))
 bot.add_cog(Fun(bot))
 bot.add_cog(MarioParty(bot))
 bot.add_cog(Toontown(bot))
+bot.add_cog(Verification(bot))
 
 #Run Bot
 #keep_alive()
-TOKEN = "NTkyMDkzODYyODIzMDY3NzA0.GekWBD.9XCtOqJ_8j3mIqLpxMVBP9OL42nGF2J22osrO0"#os.environ.get("TOKEN_DOOPLISS")
+os.environ.get("TOKEN_DOOPLISS")
 bot.run(TOKEN)
