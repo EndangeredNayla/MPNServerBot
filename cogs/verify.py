@@ -30,7 +30,7 @@ class Verification(commands.Cog):
 
         try:
             # Wait for the user's response
-            msg = await self.bot.wait_for('message', timeout=30.0, check=check)
+            msg = await self.bot.wait_for('message', timeout=120.0, check=check)
         except asyncio.TimeoutError:
             await ctx.send("Verification timed out. Please try again.")
             return
