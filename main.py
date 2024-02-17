@@ -58,5 +58,5 @@ bot.add_cog(Verification(bot))
 
 #Run Bot
 #keep_alive()
-os.environ.get("TOKEN_DOOPLISS")
+TOKEN = os.environ.get("TOKEN_DOOPLISS")
 bot.run(TOKEN)
