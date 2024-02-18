@@ -57,6 +57,11 @@ class Fun(commands.Cog):
                 await ctx.respond(random.randint(min, max))
         if count > 20:
             await ctx.respond('Invalid number of rolls')
+    
+    #Random Command
+    @commands.slash_command(aliases=["random"])
+    async def random (self, ctx)
+        ctx.respond(random.randint(1, 3))
 
     #Dadjoke Command
     @commands.slash_command(aliases=["dadjoke"])
