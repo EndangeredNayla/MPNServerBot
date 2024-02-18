@@ -18,6 +18,7 @@ from cogs.marioparty import MarioParty
 from cogs.toontown import Toontown
 from cogs.verify import Verification
 from cogs.gsheets import GSheets
+from cogs.results_poster import RPoster
 
 from discord.ext import tasks
 from discord.ext import commands
@@ -57,6 +58,7 @@ bot.add_cog(MarioParty(bot))
 bot.add_cog(Toontown(bot))
 bot.add_cog(Verification(bot))
 bot.add_cog(GSheets(bot))
+bot.add_cog(RPoster(bot))
 
 #Run Bot
 #keep_alive()
