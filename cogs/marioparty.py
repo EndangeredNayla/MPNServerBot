@@ -16,7 +16,6 @@ class MarioParty(commands.Cog):
         self.bot = bot
 
     board = SlashCommandGroup("board", "MP Board related commands")
-    partyplanner = SlashCommandGroup("partyplanner", "Party Planner related commands")
 
 
     #1 Subcommand
@@ -227,97 +226,7 @@ class MarioParty(commands.Cog):
         embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
-
     
-    
-    # Party Planner Board Get
-    @partyplanner.command(pass_context=True, aliases=["cf"])
-    async def curseforge(self, ctx, search: str=None):
-        if search == None:
-            params = {
-            'gameId': '6351',
-            'searchFilter': search
-            }
-        else:
-            params = {
-            'gameId': '6351',
-            'searchFilter': search
-            }
-        url = "https://api.curse.tools/v1/cf/mods/search"
-        responce = requests.get(url, params=params)
-        json = responce.json()
-        packList = []
-        embed = discord.Embed(
-            title=f"PartyPlanner64 Board Lookup",
-            description="\uFEFF",
-            colour=0x98FB98        )
-        for pack in json["data"]:
-            url2 = "https://api.curse.tools/v1/cf/mods/" + str(pack["id"]) + "/files/" + str(pack["mainFileId"])
-            responce = requests.get(url2)
-            json2 = responce.json()
-            embed.add_field(name=pack["name"], value="https://" + urllib.parse.quote(json2["data"]["downloadUrl"][8:]), inline=True)
-
-        if json["data"] == []:
-            embed.add_field(name="No Results", value="")
-        else:
-            pass
-        try:
-            embed.set_thumbnail(
-                url="https://i.ibb.co/k8tXpy4/ZNV4-Eki3-400x400.jpg"
-            )
-        except:
-            pass
-        embed.set_footer(
-            text=f"Ran by: {ctx.author} • Yours truly, Doopliss"
-        )
-        embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
-        await ctx.respond(content=None, embed=embed)
-
-    # Party Planner Board Get
-    @partyplanner.command(pass_context=True, aliases=["legacy", "mpl"])
-    async def mariopartylegacy(self, ctx, search: str=None):
-        embed = discord.Embed(
-            title=f"PartyPlanner64 Board Lookup",
-            description="\uFEFF",
-            colour=0x98FB98        )
-        boardNameList = []
-        boardURLList = []
-        if search == None:
-            urlHack = "https://www.mariopartylegacy.com/forum/index.php?action=downloads;cat=3;sortby=mostview;orderby=desc;start=0"
-        else:
-            urlHack = "https://www.mariopartylegacy.com/forum/index.php?action=downloads;cat=3;sortby=mostview;orderby=desc;start=0;sa=search2;searchfor=" + search
-        response = requests.get(urlHack)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        boardTitles = soup.find_all('tr', class_=["windowbg", "windowbg2"])
-        for title in boardTitles:
-            boardName = title.get_text()
-            boardName = boardName.split("(None)")[0]
-            boardName = boardName.strip()
-            boardName = ' '.join([word for word in boardName.split() if not re.search(r'[123459789()]', word)])
-            boardNameList.append(boardName)
-        for url in boardTitles:
-            link_element = url.find('a')
-            if link_element:
-                boardID = re.findall(r'\d+', link_element['href'])[-1]
-                downloadURL = "https://www.mariopartylegacy.com/forum/index.php?action=downloads;sa=downfile&id=" + boardID
-                boardURLList.append(downloadURL)
-
-        for name, url in zip(boardNameList, boardURLList):
-            embed.add_field(name=name, value=url, inline=True)
-        try:
-            embed.set_thumbnail(
-                url="https://i.ibb.co/k8tXpy4/ZNV4-Eki3-400x400.jpg"
-            )
-        except:
-            pass
-        embed.set_footer(
-            text=f"Ran by: {ctx.author} • Yours truly, Doopliss"
-        )
-        embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
-        await ctx.respond(content=None, embed=embed)
-
-    
-
 
 def setup(bot):
     bot.add_cog(MarioParty(bot))
