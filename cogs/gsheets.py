@@ -78,7 +78,7 @@ class GSheets(commands.Cog):
 
             # Combine data from both ranges
             combined_data = [(a, b) for a, b in zip(values_a, values_b)]
-            combined_data.sort(key=lambda x: x[1])
+            combined_data.sort(key=lambda x: x[1], reverse=True)
             return combined_data
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -105,7 +105,7 @@ class GSheets(commands.Cog):
 
             # Combine data from both ranges
             combined_data = [(a, b) for a, b in zip(values_a, values_b)]
-            combined_data.sort(key=lambda x: x[1])
+            combined_data.sort(key=lambda x: x[1], reverse=True)
             return combined_data
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -132,7 +132,7 @@ class GSheets(commands.Cog):
 
             # Combine data from both ranges
             combined_data = [(a, b) for a, b in zip(values_a, values_b)]
-            combined_data.sort(key=lambda x: x[1])
+            combined_data.sort(key=lambda x: x[1], reverse=True)
             return combined_data
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -159,7 +159,7 @@ class GSheets(commands.Cog):
 
             # Combine data from both ranges
             combined_data = [(a, b) for a, b in zip(values_a, values_b)]
-            combined_data.sort(key=lambda x: x[1])
+            combined_data.sort(key=lambda x: x[1], reverse=True)
             return combined_data
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -173,9 +173,9 @@ class GSheets(commands.Cog):
             for index, item in enumerate(data, start=1):
                 ordinal_index = get_ordinal_suffix(int(str(item[0])[2:-2]))
                 embed.add_field(name=f"{ordinal_index} - {str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " pts")
-            await ctx.send(embed=embed)
+            await ctx.respond(embed=embed)
         else:
-            await ctx.send("Failed to retrieve data from the spreadsheet.")
+            await ctx.respond("Failed to retrieve data from the spreadsheet.")
 
     @leaderboard.command(name="diamond")
     async def diamond(self, ctx):
@@ -183,10 +183,10 @@ class GSheets(commands.Cog):
         if data:
             embed = discord.Embed(title="Top 15 Players winning 1st (Diamond Rank)", color=0xb9f2ff)
             for index, item in enumerate(data, start=1):
-                embed.add_field(name=f"{str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " Diamond Ranks")
-            await ctx.send(embed=embed)
+                embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Diamond Ranks")
+            await ctx.respond(embed=embed)
         else:
-            await ctx.send("Failed to retrieve data from the spreadsheet.")
+            await ctx.respond("Failed to retrieve data from the spreadsheet.")
     
     @leaderboard.command(name="gold")
     async def gold(self, ctx):
@@ -194,10 +194,10 @@ class GSheets(commands.Cog):
         if data:
             embed = discord.Embed(title="Top 15 Players winning 2nd (Gold Rank)", color=0xffd700)
             for index, item in enumerate(data, start=1):
-                embed.add_field(name=f"{str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " Gold Ranks")
-            await ctx.send(embed=embed)
+                embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Gold Ranks")
+            await ctx.respond(embed=embed)
         else:
-            await ctx.send("Failed to retrieve data from the spreadsheet.")
+            await ctx.respond("Failed to retrieve data from the spreadsheet.")
 
     @leaderboard.command(name="silver")
     async def silver(self, ctx):
@@ -205,10 +205,10 @@ class GSheets(commands.Cog):
         if data:
             embed = discord.Embed(title="Top 15 Players winning 3rd (Silver Rank)", color=0xc0c0c0)
             for index, item in enumerate(data, start=1):
-                embed.add_field(name=f"{str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " Silver Ranks")
-            await ctx.send(embed=embed)
+                embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Silver Ranks")
+            await ctx.respond(embed=embed)
         else:
-            await ctx.send("Failed to retrieve data from the spreadsheet.")
+            await ctx.respond("Failed to retrieve data from the spreadsheet.")
     
     @leaderboard.command(name="bronze")
     async def bronze(self, ctx):
@@ -216,10 +216,10 @@ class GSheets(commands.Cog):
         if data:
             embed = discord.Embed(title="Top 15 Players winning 4th (Bronze Rank)", color=0xcd7f32)
             for index, item in enumerate(data, start=1):
-                embed.add_field(name=f"{str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " Bronze Ranks")
-            await ctx.send(embed=embed)
+                embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Bronze Ranks")
+            await ctx.respond(embed=embed)
         else:
-            await ctx.send("Failed to retrieve data from the spreadsheet.")
+            await ctx.respond("Failed to retrieve data from the spreadsheet.")
 
 def setup(bot):
     bot.add_cog(GSheets(bot))
