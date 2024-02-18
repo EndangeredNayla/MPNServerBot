@@ -60,7 +60,7 @@ class Fun(commands.Cog):
     
     #Random Command
     @commands.slash_command(aliases=["random"])
-    async def random (self, ctx)
+    async def random (self, ctx):
         ctx.respond(random.randint(1, 3))
 
     #Dadjoke Command
