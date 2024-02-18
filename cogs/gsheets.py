@@ -173,6 +173,7 @@ class GSheets(commands.Cog):
             for index, item in enumerate(data, start=1):
                 ordinal_index = get_ordinal_suffix(int(str(item[0])[2:-2]))
                 embed.add_field(name=f"{ordinal_index} - {str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " pts")
+                embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
             await ctx.respond(embed=embed)
         else:
             await ctx.respond("Failed to retrieve data from the spreadsheet.")
@@ -184,6 +185,7 @@ class GSheets(commands.Cog):
             embed = discord.Embed(title="Top 30 Players winning 1st (Diamond Rank)", color=0xb9f2ff)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Diamond Ranks")
+                embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
             await ctx.respond(embed=embed)
         else:
             await ctx.respond("Failed to retrieve data from the spreadsheet.")
@@ -195,6 +197,7 @@ class GSheets(commands.Cog):
             embed = discord.Embed(title="Top 30 Players winning 2nd (Gold Rank)", color=0xffd700)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Gold Ranks")
+                embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
             await ctx.respond(embed=embed)
         else:
             await ctx.respond("Failed to retrieve data from the spreadsheet.")
@@ -206,6 +209,7 @@ class GSheets(commands.Cog):
             embed = discord.Embed(title="Top 30 Players winning 3rd (Silver Rank)", color=0xc0c0c0)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Silver Ranks")
+                embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
             await ctx.respond(embed=embed)
         else:
             await ctx.respond("Failed to retrieve data from the spreadsheet.")
@@ -217,6 +221,7 @@ class GSheets(commands.Cog):
             embed = discord.Embed(title="Top 30 Players winning 4th (Bronze Rank)", color=0xcd7f32)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Bronze Ranks")
+                embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
             await ctx.respond(embed=embed)
         else:
             await ctx.respond("Failed to retrieve data from the spreadsheet.")

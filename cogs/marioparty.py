@@ -31,7 +31,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/1/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -47,7 +47,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/2/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -63,7 +63,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/3/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
         
@@ -80,7 +80,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/4/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -96,7 +96,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/5/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -112,7 +112,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/6/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -128,7 +128,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/7/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -144,7 +144,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/8/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -160,7 +160,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/9/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -176,7 +176,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/10/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -192,7 +192,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/DS/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -208,7 +208,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/Super/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
     
@@ -224,7 +224,7 @@ class MarioParty(commands.Cog):
                               colour=0x98FB98)
     
         embed.set_image(url="https://raw.githubusercontent.com/EndangeredNayla/Doopliss/master/boards/Superstars/" + boardParsed + ".png")
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Poggers")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, Doopliss")
      
         await ctx.respond(embed=embed)
 
@@ -268,7 +268,7 @@ class MarioParty(commands.Cog):
         except:
             pass
         embed.set_footer(
-            text=f"Ran by: {ctx.author} • Yours truly, Poggers"
+            text=f"Ran by: {ctx.author} • Yours truly, Doopliss"
         )
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.respond(content=None, embed=embed)
@@ -311,7 +311,7 @@ class MarioParty(commands.Cog):
         except:
             pass
         embed.set_footer(
-            text=f"Ran by: {ctx.author} • Yours truly, Poggers"
+            text=f"Ran by: {ctx.author} • Yours truly, Doopliss"
         )
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.respond(content=None, embed=embed)
