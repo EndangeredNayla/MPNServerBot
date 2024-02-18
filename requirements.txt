@@ -4,3 +4,6 @@ requests
 urllib3
 aiohttp
 py-cord==2.2.2
+google_spreadsheet
+google-auth-oauthlib
+pandas
