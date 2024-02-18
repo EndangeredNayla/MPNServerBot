@@ -37,17 +37,17 @@ class GSheets(commands.Cog):
 
             # Get data from range A3:A10
             result_a = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='A3:A17').execute()
+                                           range='A3:A32').execute()
             values_a = result_a.get('values', [])
 
             # Get data from range B3:B10
             result_b = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='B3:B17').execute()
+                                           range='B3:B32').execute()
             values_b = result_b.get('values', [])
 
             # Get data from range C3:C10
             result_c = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='C3:C17').execute()
+                                           range='C3:C32').execute()
             values_c = result_c.get('values', [])
 
             # Combine data from both ranges
@@ -69,11 +69,11 @@ class GSheets(commands.Cog):
             sheet = service.spreadsheets()
 
             result_a = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='B3:B17').execute()
+                                           range='B3:B32').execute()
             values_a = result_a.get('values', [])
 
             result_b = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='E3:E17').execute()
+                                           range='E3:E32').execute()
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
@@ -96,11 +96,11 @@ class GSheets(commands.Cog):
             sheet = service.spreadsheets()
 
             result_a = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='B3:B17').execute()
+                                           range='B3:B32').execute()
             values_a = result_a.get('values', [])
 
             result_b = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='F3:F17').execute()
+                                           range='F3:F32').execute()
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
@@ -123,11 +123,11 @@ class GSheets(commands.Cog):
             sheet = service.spreadsheets()
 
             result_a = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='B3:B17').execute()
+                                           range='B3:B32').execute()
             values_a = result_a.get('values', [])
 
             result_b = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='G3:G17').execute()
+                                           range='G3:G32').execute()
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
@@ -150,11 +150,11 @@ class GSheets(commands.Cog):
             sheet = service.spreadsheets()
 
             result_a = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='B3:B17').execute()
+                                           range='B3:B32').execute()
             values_a = result_a.get('values', [])
 
             result_b = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID_input,
-                                           range='H3:H17').execute()
+                                           range='H3:H32').execute()
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
@@ -169,7 +169,7 @@ class GSheets(commands.Cog):
     async def points(self, ctx):
         data = await self.get_data_for_pts()
         if data:
-            embed = discord.Embed(title="Top 15 Players (pts)", color=0x00ff00)
+            embed = discord.Embed(title="Top 30 Players (pts)", color=0x00ff00)
             for index, item in enumerate(data, start=1):
                 ordinal_index = get_ordinal_suffix(int(str(item[0])[2:-2]))
                 embed.add_field(name=f"{ordinal_index} - {str(item[1])[2:-2]}", value=str(item[2])[2:-2] + " pts")
@@ -181,7 +181,7 @@ class GSheets(commands.Cog):
     async def diamond(self, ctx):
         data = await self.get_data_for_diamond()
         if data:
-            embed = discord.Embed(title="Top 15 Players winning 1st (Diamond Rank)", color=0xb9f2ff)
+            embed = discord.Embed(title="Top 30 Players winning 1st (Diamond Rank)", color=0xb9f2ff)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Diamond Ranks")
             await ctx.respond(embed=embed)
@@ -192,7 +192,7 @@ class GSheets(commands.Cog):
     async def gold(self, ctx):
         data = await self.get_data_for_gold()
         if data:
-            embed = discord.Embed(title="Top 15 Players winning 2nd (Gold Rank)", color=0xffd700)
+            embed = discord.Embed(title="Top 30 Players winning 2nd (Gold Rank)", color=0xffd700)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Gold Ranks")
             await ctx.respond(embed=embed)
@@ -203,7 +203,7 @@ class GSheets(commands.Cog):
     async def silver(self, ctx):
         data = await self.get_data_for_silver()
         if data:
-            embed = discord.Embed(title="Top 15 Players winning 3rd (Silver Rank)", color=0xc0c0c0)
+            embed = discord.Embed(title="Top 30 Players winning 3rd (Silver Rank)", color=0xc0c0c0)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Silver Ranks")
             await ctx.respond(embed=embed)
@@ -214,7 +214,7 @@ class GSheets(commands.Cog):
     async def bronze(self, ctx):
         data = await self.get_data_for_bronze()
         if data:
-            embed = discord.Embed(title="Top 15 Players winning 4th (Bronze Rank)", color=0xcd7f32)
+            embed = discord.Embed(title="Top 30 Players winning 4th (Bronze Rank)", color=0xcd7f32)
             for index, item in enumerate(data, start=1):
                 embed.add_field(name=f"{str(item[0])[2:-2]}", value=str(item[1])[2:-2] + " Bronze Ranks")
             await ctx.respond(embed=embed)
