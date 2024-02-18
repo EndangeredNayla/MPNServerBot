@@ -77,7 +77,7 @@ class GSheets(commands.Cog):
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
-            combined_data = [(a, b, c) for a, b, c in zip(values_a, values_b, values_c)]
+            combined_data = [(a, b) for a, b in zip(values_a, values_b)]
             combined_data.sort(key=lambda x: x[1])
             return combined_data
         except Exception as e:
@@ -104,7 +104,7 @@ class GSheets(commands.Cog):
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
-            combined_data = [(a, b, c) for a, b, c in zip(values_a, values_b, values_c)]
+            combined_data = [(a, b) for a, b in zip(values_a, values_b)]
             combined_data.sort(key=lambda x: x[1])
             return combined_data
         except Exception as e:
@@ -131,7 +131,7 @@ class GSheets(commands.Cog):
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
-            combined_data = [(a, b, c) for a, b, c in zip(values_a, values_b, values_c)]
+            combined_data = [(a, b) for a, b in zip(values_a, values_b)]
             combined_data.sort(key=lambda x: x[1])
             return combined_data
         except Exception as e:
@@ -158,7 +158,7 @@ class GSheets(commands.Cog):
             values_b = result_b.get('values', [])
 
             # Combine data from both ranges
-            combined_data = [(a, b, c) for a, b, c in zip(values_a, values_b, values_c)]
+            combined_data = [(a, b) for a, b in zip(values_a, values_b)]
             combined_data.sort(key=lambda x: x[1])
             return combined_data
         except Exception as e:
