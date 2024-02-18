@@ -62,7 +62,7 @@ class Fun(commands.Cog):
     @commands.slash_command(aliases=["random"])
     async def random_player (self, ctx):
         """Spits out 1, 2, or 3"""
-        awit ctx.respond(random.randint(1, 3))
+        await ctx.respond(random.randint(1, 3))
 
     #Dadjoke Command
     @commands.slash_command(aliases=["dadjoke"])
