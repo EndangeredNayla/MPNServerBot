@@ -26,6 +26,9 @@ class Fun(commands.Cog):
     global wiiMPList
     wiiMPList=["Mario Party 8", "Mario Party 9"]
     
+    global mp8List
+    mp8List=["Mario Party 8"]
+
     global DSMPList
     DSMPList=["Mario Party DS"]
     
@@ -140,7 +143,7 @@ class Fun(commands.Cog):
     @game.command(name='marioparty-gc8')
     async def marioparty(self, ctx):
         """Pick a Mario Party from 4-8"""
-        gameSelect=random.choice(gcMPList + "Mario Party 8")
+        gameSelect=random.choice(mp8List)
         await ctx.respond(gameSelect)
     
     #Game Subcommand
