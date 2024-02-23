@@ -27,7 +27,7 @@ class Base(commands.Cog):
             title='A Poll has Started!',
             description='{0}'.format(mesg),
             color=0x00FF00)
-        embed.set_footer(text=f"Poll created by: {ctx.message.author} • React to vote! • Yours truly, {client.user.name}")
+        embed.set_footer(text=f"Poll created by: {ctx.author} • React to vote! • Yours truly, {client.user.name}")
         embed_message = await ctx.send(embed=embed)
 
         await embed_message.add_reaction('👍')
@@ -55,7 +55,7 @@ class Base(commands.Cog):
         embed.add_field(name="ID", value=server.id, inline=True)
         embed.add_field(name="Creation Date", value=f"{server.created_at}", inline=True)
         #embed.add_field(name="Server Icon Url", value={server.icon_url}, inline=True) #Doesn't Exist Anymore
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -82,7 +82,7 @@ class Base(commands.Cog):
         embed.add_field(name='Total Users:', value=f"{memberCount}", inline=False)
         embed.add_field(name='Bot Developer:', value="<@" + f"{ownerID}" + ">", inline=False)
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         await ctx.send(embed=embed)
 
     @commands.slash_command()

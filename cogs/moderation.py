@@ -20,7 +20,7 @@ class Moderation(commands.Cog):
     async def ban(self, ctx, user, arg):
         if not await self.cog_check(ctx):
             return
-        author = ctx.message.author
+        author = ctx.author
         reason = arg
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -81,7 +81,7 @@ class Moderation(commands.Cog):
     async def kick(self, ctx, user, arg):
         if not await self.cog_check(ctx):
             return
-        author = ctx.message.author
+        author = ctx.author
         reason = arg
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')

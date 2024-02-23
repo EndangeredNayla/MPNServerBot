@@ -38,7 +38,7 @@ class Toontown(commands.Cog):
             colour=0x98FB98)
         embed.set_thumbnail(url="https://i.ibb.co/RzrzDVh/TTR.png")
         embed.add_field(name="Invasions:", value=ttr_invasions, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await channel.send(embed=embed)
 
@@ -72,7 +72,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://sitecdn.corporateclash.net/logo1.1/icon-focused-300x300.png")
         embed.add_field(name="Invasions:", value=ttcc_invasions, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -106,7 +106,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://tooniversal.com/static/fav/android-icon-192x192.png")
         embed.add_field(name="Invasions:", value=tvs_invasions, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -136,7 +136,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://opdessertstorm.com/static/assets/img/favicon.ico")
         embed.add_field(name="Invasions:", value=ods_invasions, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -169,7 +169,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://i.ibb.co/NtStS9V/Icon5.png")
         embed.add_field(name="Invasions:", value=ttf_invasions, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -199,7 +199,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://i.ibb.co/RzrzDVh/TTR.png")
         embed.add_field(name="Population:", value=ttr_districts, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -233,7 +233,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://sitecdn.corporateclash.net/logo1.1/icon-focused-300x300.png")
         embed.add_field(name="Population:", value=ttcc_districts, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -270,7 +270,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://tooniversal.com/static/fav/android-icon-192x192.png")
         embed.add_field(name="Population:", value=tvs_districts2, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
@@ -309,7 +309,7 @@ class Toontown(commands.Cog):
             timestamp=ctx.message.created_at)
         embed.set_thumbnail(url="https://opdessertstorm.com/static/assets/img/favicon.ico")
         embed.add_field(name="Population:", value=ods_districts2, inline=True)
-        embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
         embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
