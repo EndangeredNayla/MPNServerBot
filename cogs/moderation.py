@@ -37,7 +37,7 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Reason: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(
             text="Requested by {} \a {}".format(author, data),
@@ -55,7 +55,7 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Reason: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(text="Banned at {}".format(data))
         await staff_log.send(embed=embed)
@@ -71,10 +71,10 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Reason: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(text="Banned at {}".format(data))
-        await user.send(user, embed=embed)
+        await ctx.author.send(user, embed=embed)
         await ctx.guild.ban(user, reason=reason)
     
     @commands.slash_command(pass_context=True)
@@ -98,7 +98,7 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Kicked: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(
             text="Requested by {} \a {}".format(author, data),
@@ -116,7 +116,7 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Reason: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(text="Kicked at {}".format(data))
         await staff_log.send(embed=embed)
@@ -132,10 +132,10 @@ class Moderation(commands.Cog):
         embed.add_field(
             name="Reason: ",
             value="{}\n------------------------------------------------------".
-            format(arg),
+            format(message),
             inline=False)
         embed.set_footer(text="Kicked at {}".format(data))
-        await user.send(user, embed=embed)
+        await ctx.author.send(user, embed=embed)
         await ctx.guild.kick(user, reason=reason)
 
 def setup(bot):
