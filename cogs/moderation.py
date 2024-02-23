@@ -24,7 +24,7 @@ class Moderation(commands.Cog):
         reason = message
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        staff_log = client.get_channel(1208522732602662972)
+        staff_log = self.bot.get_channel(1208522732602662972)
         embed = discord.Embed(
             name="MEMBER_BANNED",
             description="------------------------------------------------------",
@@ -85,7 +85,7 @@ class Moderation(commands.Cog):
         reason = message
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        staff_log = client.get_channel(1208522732602662972)
+        staff_log = self.bot.get_channel(1208522732602662972)
         embed = discord.Embed(
             name="MEMBER_KICKED",
             description="------------------------------------------------------",
