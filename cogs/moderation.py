@@ -1,6 +1,6 @@
 import discord
 import platform
-import datetime
+from datetime import datetime
 from discord.ext import commands
 
 #Variables
@@ -17,11 +17,11 @@ class Moderation(commands.Cog):
         return moderator_role in ctx.author.roles
 
     @commands.slash_command(pass_context=True)
-    async def ban(self, ctx, user, arg):
+    async def ban(self, ctx, user, message):
         if not await self.cog_check(ctx):
             return
         author = ctx.author
-        reason = arg
+        reason = message
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         staff_log = client.get_channel(1208522732602662972)
@@ -78,11 +78,11 @@ class Moderation(commands.Cog):
         await ctx.guild.ban(user, reason=reason)
     
     @commands.slash_command(pass_context=True)
-    async def kick(self, ctx, user, arg):
+    async def kick(self, ctx, user, message):
         if not await self.cog_check(ctx):
             return
         author = ctx.author
-        reason = arg
+        reason = message
         server = ctx.guild.name
         data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         staff_log = client.get_channel(1208522732602662972)
