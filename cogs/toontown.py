@@ -13,7 +13,7 @@ class Toontown(commands.Cog):
         self.bot = bot
 
     #TTR Invasions Command
-    @commands.command(pass_context=True, aliases=["ttr_invasions"])
+    @commands.slash_command(pass_context=True, aliases=["ttr_invasions"])
     async def ttrinvasions(self, ctx):
         ttr_invasions_api = "https://www.toontownrewritten.com/api/invasions"
         ttr_invasions_response = requests.get(ttr_invasions_api, verify=True)
@@ -43,7 +43,7 @@ class Toontown(commands.Cog):
         await channel.send(embed=embed)
 
     #TTCC Invasions Command
-    @commands.command(pass_context=True, aliases=["ttcc_invasions"])
+    @commands.slash_command(pass_context=True, aliases=["ttcc_invasions"])
     async def ttccinvasions(self, ctx):
         ttcc_invasions_api = "https://corporateclash.net/api/v1/districts.js"
         ttcc_invasions_response = requests.get(ttcc_invasions_api, verify=True)
@@ -77,7 +77,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #TVS Invasions Command
-    @commands.command(pass_context=True, aliases=["tvs_invasions"])
+    @commands.slash_command(pass_context=True, aliases=["tvs_invasions"])
     async def tvsinvasions(self, ctx):
         tvs_invasions_api = "https://tooniversal.com/api/districts"
         tvs_invasions_response = requests.get(tvs_invasions_api, verify=True)
@@ -111,7 +111,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #ODS Invasions Command
-    @commands.command(pass_context=True, aliases=["ods_invasions"])
+    @commands.slash_command(pass_context=True, aliases=["ods_invasions"])
     async def odsinvasions(self, ctx):
         ods_invasions_api = "https://opdessertstorm.com/api/districts"
         ods_invasions_response = requests.get(ods_invasions_api, verify=True)
@@ -141,7 +141,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #TTF Invasions Command
-    @commands.command(pass_context=True, aliases=["ttf_invasions"])
+    @commands.slash_command(pass_context=True, aliases=["ttf_invasions"])
     async def ttfinvasions(self, ctx):
         ttf_invasions_api = "https://reg.toontownfellowship.com/api/invasions"
         ttf_invasions_response = requests.get(ttf_invasions_api, verify=True)
@@ -174,7 +174,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #TTR Districts Command
-    @commands.command(pass_context=True, aliases=["ttr_districts", "ttr"])
+    @commands.slash_command(pass_context=True, aliases=["ttr_districts", "ttr"])
     async def ttrdistricts(self, ctx):
         ttr_districts_api = "https://www.toontownrewritten.com/api/population"
         ttr_districts_response = requests.get(ttr_districts_api, verify=True)
@@ -204,7 +204,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #TTCC Districts Command
-    @commands.command(pass_context=True, aliases=["ttcc_districts", "ttcc"])
+    @commands.slash_command(pass_context=True, aliases=["ttcc_districts", "ttcc"])
     async def ttccdistricts(self, ctx):
         ttcc_totalpop_api = "https://corporateclash.net/api/v1/game_info.js"
         ttcc_totalpop_response = requests.get(ttcc_totalpop_api, verify=True)
@@ -238,7 +238,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #TVS Districts Command
-    @commands.command(pass_context=True, aliases=["tvs_districts", "tvs"])
+    @commands.slash_command(pass_context=True, aliases=["tvs_districts", "tvs"])
     async def tvsdistricts(self, ctx):
         tvs_districts_api = "https://tooniversal.com/api/districts"
         tvs_districts_response = requests.get(tvs_districts_api, verify=True)
@@ -275,7 +275,7 @@ class Toontown(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #ODS Districts Command
-    @commands.command(pass_context=True, aliases=["ods_districts", "ods"])
+    @commands.slash_command(pass_context=True, aliases=["ods_districts", "ods"])
     async def odsdistricts(self, ctx):
         ods_districts_api = "https://opdessertstorm.com/api/districts"
         ods_districts_response = requests.get(ods_districts_api, verify=True)

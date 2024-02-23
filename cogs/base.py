@@ -14,12 +14,12 @@ class Base(commands.Cog):
         self.bot = bot
 
     #Ping Command
-    @commands.command(description="ping pong")
+    @commands.slash_command(description="ping pong")
     async def ping(self, ctx):
         await ctx.send("Pong")
 
     #Poll Command
-    @commands.command(pass_context=True)
+    @commands.slash_command(pass_context=True)
     async def poll(self, ctx, *args):
         mesg = ' '.join(args)
         await ctx.message.delete()
@@ -35,7 +35,7 @@ class Base(commands.Cog):
         await embed_message.add_reaction('🤷')
     
     #Server Command
-    @commands.command(aliases=["server"])
+    @commands.slash_command(aliases=["server"])
     async def s_info(self, ctx):
         server = ctx.guild
         icon = ("\uFEFF")
@@ -60,7 +60,7 @@ class Base(commands.Cog):
         await ctx.send(content=None, embed=embed)
 
     #Stats Command
-    @commands.command()
+    @commands.slash_command()
     async def stats(self, ctx):
 
         pythonVersion = platform.python_version()
@@ -85,11 +85,11 @@ class Base(commands.Cog):
         embed.set_footer(text=f"Ran by: {ctx.message.author} • Yours truly, {self.bot.user.name}")
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.slash_command()
     async def channelid(self, ctx):
         await ctx.send(str(ctx.channel.id))
 
-    @commands.command(brief="Get the ID of a member")
+    @commands.slash_command(brief="Get the ID of a member")
     async def userid(self, ctx, member : discord.Member=0):
       if member == 0:
         await ctx.send(str(ctx.author.id))

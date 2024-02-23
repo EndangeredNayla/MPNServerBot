@@ -143,7 +143,7 @@ class Fun(commands.Cog):
     @game.command(name='marioparty-gc8')
     async def marioparty(self, ctx):
         """Pick a Mario Party from 4-8"""
-        gameSelect=random.choice(mp8List)
+        gameSelect=random.choice(gcList + mp8List)
         await ctx.respond(gameSelect)
     
     #Game Subcommand
