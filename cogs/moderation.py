@@ -17,7 +17,7 @@ class Moderation(commands.Cog):
         return moderator_role in ctx.author.roles
 
     @commands.slash_command(pass_context=True)
-    async def ban(ctx, user: discord.Member, *, arg):
+    async def ban(ctx, user, arg):
         if not await self.cog_check(ctx):
             return
         author = ctx.message.author
@@ -78,7 +78,7 @@ class Moderation(commands.Cog):
         await ctx.guild.ban(user, reason=reason)
     
     @commands.slash_command(pass_context=True)
-    async def kick(ctx, user: discord.Member, *, arg):
+    async def kick(ctx, *, arg):
         if not await self.cog_check(ctx):
             return
         author = ctx.message.author
