@@ -29,7 +29,7 @@ class Moderation(commands.Cog):
             title="MEMBER_BANNED",
             description="------------------------------------------------------",
             color=0x00ff00)
-        embed.set_author(title="Member Banned:\nMember Banned Successfully")
+        embed.set_author(name="Member Banned:\nMember Banned Successfully")
         embed.add_field(
             title="Banned by: ", value="{}".format(author.mention), inline=False)
         embed.add_field(
@@ -124,7 +124,7 @@ class Moderation(commands.Cog):
             title="KICKED",
             description="------------------------------------------------------",
             color=0xff0000)
-        embed.set_author(title="Member Kicked:\nYou've been Kicked")
+        embed.set_author(name="Member Kicked:\nYou've been Kicked")
         embed.add_field(
             title="Kicked by: ", value="{}".format(author.mention), inline=False)
         embed.add_field(
