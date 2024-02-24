@@ -13,7 +13,7 @@ class Moderation(commands.Cog):
 
     async def cog_check(self, ctx):
         # Check if the author has the "Moderator" role
-        moderator_role = discord.utils.get(ctx.guild.roles, title="Millennium Star (Mod)")
+        moderator_role = discord.utils.get(ctx.guild.roles, name="Millennium Star (Mod)")
         return moderator_role in ctx.author.roles
 
     @commands.slash_command(pass_context=True)
