@@ -40,7 +40,7 @@ class DailyQ(commands.Cog):
             embed.set_footer(text=f"Ran by: {ctx.author}")
             embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
             channel = self.bot.get_channel(1211032887114342510)  # Replace YOUR_CHANNEL_ID with the actual channel ID
-            await channel.send(content=None, embed=embed)
+            await channel.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(DailyQ(bot))
