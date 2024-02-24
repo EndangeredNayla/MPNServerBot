@@ -92,11 +92,11 @@ class Moderation(commands.Cog):
             color=0x00ff00)
         embed.set_author(title="Member Kicked:\nMember Kicked Successfully")
         embed.add_field(
-            title="Kicked by: ", value="{}".format(author.mention), inline=False)
+            name="Kicked by: ", value="{}".format(author.mention), inline=False)
         embed.add_field(
-            title="Kicked: ", value="<@{}>".format(user.id), inline=False)
+            name="Kicked: ", value="<@{}>".format(user.id), inline=False)
         embed.add_field(
-            title="Kicked: ",
+            name="Kicked: ",
             value="{}\n------------------------------------------------------".
             format(message),
             inline=False)
@@ -110,11 +110,11 @@ class Moderation(commands.Cog):
             color=0xff0000)
         embed.set_author(title="Member Kicked:")
         embed.add_field(
-            title="Kicked by: ", value="{}".format(author.mention), inline=False)
+            name="Kicked by: ", value="{}".format(author.mention), inline=False)
         embed.add_field(
-            title="Kicked: ", value="<@{}>".format(user.id), inline=False)
+            name="Kicked: ", value="<@{}>".format(user.id), inline=False)
         embed.add_field(
-            title="Reason: ",
+            name="Reason: ",
             value="{}\n------------------------------------------------------".
             format(message),
             inline=False)
@@ -126,11 +126,11 @@ class Moderation(commands.Cog):
             color=0xff0000)
         embed.set_author(name="Member Kicked:\nYou've been Kicked")
         embed.add_field(
-            title="Kicked by: ", value="{}".format(author.mention), inline=False)
+            name="Kicked by: ", value="{}".format(author.mention), inline=False)
         embed.add_field(
-            title="Kicked in: ", value="{}".format(server), inline=False)
+            name="Kicked in: ", value="{}".format(server), inline=False)
         embed.add_field(
-            title="Reason: ",
+            name="Reason: ",
             value="{}\n------------------------------------------------------".
             format(message),
             inline=False)
