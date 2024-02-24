@@ -27,10 +27,6 @@ class DailyQ(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.daily_question.start(ct)
-
-    def cog_unload(self):
-        self.daily_question.cancel()
 
     @commands.slash_command()
     async def daily_question(self, ctx):
