@@ -20,6 +20,7 @@ from cogs.verify import Verification
 from cogs.gsheets import GSheets
 from cogs.results_poster import RPoster
 from cogs.moderation import Moderation
+from cogs.daily_question import DailyQ
 
 from discord.ext import tasks
 from discord.ext import commands
@@ -61,6 +62,7 @@ bot.add_cog(Verification(bot))
 bot.add_cog(GSheets(bot))
 bot.add_cog(RPoster(bot))
 bot.add_cog(Moderation(bot))
+bot.add_cog(DailyQ(bot))
 
 #Run Bot
 #keep_alive()

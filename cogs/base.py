@@ -55,8 +55,8 @@ class Base(commands.Cog):
         embed.add_field(name="ID", value=server.id, inline=True)
         embed.add_field(name="Creation Date", value=f"{server.created_at}", inline=True)
         #embed.add_field(name="Server Icon Url", value={server.icon_url}, inline=True) #Doesn't Exist Anymore
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
-        embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {ctx.author}")
+        embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
         await ctx.send(content=None, embed=embed)
 
     #Stats Command
@@ -69,7 +69,7 @@ class Base(commands.Cog):
         memberCount = len(set(self.bot.get_all_members()))
 
         embed = discord.Embed(
-            title=f'{self.bot.user.name} Stats',
+            title=f'{ctx.author} Stats',
             description='\uFEFF',
             colour=0x98FB98,
             timestamp=ctx.message.created_at)
@@ -81,8 +81,8 @@ class Base(commands.Cog):
         embed.add_field(name='Total Guilds:', value=f"{serverCount}", inline=False)
         embed.add_field(name='Total Users:', value=f"{memberCount}", inline=False)
         embed.add_field(name='Bot Developer:', value="<@" + f"{ownerID}" + ">", inline=False)
-        embed.set_author(name=self.bot.user.name, icon_url=self.bot.user.avatar.url)
-        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {self.bot.user.name}")
+        embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text=f"Ran by: {ctx.author} • Yours truly, {ctx.author}")
         await ctx.send(embed=embed)
 
     @commands.slash_command()
