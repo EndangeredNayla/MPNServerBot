@@ -7,7 +7,6 @@ import os
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-# Replace 'your_spreadsheet_id' with the actual ID of your Google Sheets spreadsheet
 SAMPLE_SPREADSHEET_ID_input = '1QapLYYIlq2vaWRuF1HDEuT6tfZI0T5J40zaTC8c8cOA'
 
 def get_ordinal_suffix(number):

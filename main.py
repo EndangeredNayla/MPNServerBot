@@ -57,7 +57,6 @@ async def on_ready():
 bot.add_cog(Base(bot))
 bot.add_cog(Fun(bot))
 bot.add_cog(MarioParty(bot))
-bot.add_cog(Toontown(bot))
 bot.add_cog(Verification(bot))
 bot.add_cog(GSheets(bot))
 bot.add_cog(RPoster(bot))
