@@ -28,19 +28,22 @@ class DailyQ(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command(self)
-    async def daily_question(self, ctx):
-        now = datetime.now(pytz.timezone('US/Eastern'))
-        if now.hour == 14 and now.minute == 41:
-            embed = discord.Embed(
-                title='Daily Question',
-                description=random.choice(icebreaker_questions),
-                colour=0x98FB98
-            )
-            embed.set_footer(text=f"Ran by: {ctx.author}")
-            embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
-            channel = self.bot.get_channel(1211032887114342510)
-            await channel.send(embed=embed)
+    while True:
+        async def daily_question(self, ctx):
+            now = datetime.now(pytz.timezone('US/Eastern'))
+                if now.hour == 19 and now.minute == 7:
+                embed = discord.Embed(
+                        title='Daily Question',
+                        description=random.choice(icebreaker_questions),
+                        colour=0x98FB98
+                )
+                embed.set_footer(text=f"Ran by: {ctx.author}")
+                embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
+                channel = self.bot.get_channel(1211032887114342510)
+                await channel.send(embed=embed)
+
+def setup(bot):
+    bot.add_cog(DailyQ(bot))
 
 def setup(bot):
     bot.add_cog(DailyQ(bot))
