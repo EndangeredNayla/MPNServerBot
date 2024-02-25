@@ -28,10 +28,10 @@ class DailyQ(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command()
+    @commands.slash_command(self)
     async def daily_question(self, ctx):
         now = datetime.now(pytz.timezone('US/Eastern'))
-        if now.hour == 14 and now.minute == 41:  # Check if it's 5:00 AM EST
+        if now.hour == 14 and now.minute == 41:
             embed = discord.Embed(
                 title='Daily Question',
                 description=random.choice(icebreaker_questions),
@@ -39,7 +39,7 @@ class DailyQ(commands.Cog):
             )
             embed.set_footer(text=f"Ran by: {ctx.author}")
             embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
-            channel = self.bot.get_channel(1211032887114342510)  # Replace YOUR_CHANNEL_ID with the actual channel ID
+            channel = self.bot.get_channel(1211032887114342510)
             await channel.send(embed=embed)
 
 def setup(bot):
