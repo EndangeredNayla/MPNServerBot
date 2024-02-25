@@ -27,19 +27,19 @@ class DailyQ(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
+        self.daily_question.start()
 
-    while True:
-        async def daily_question(self, ctx):
+    @tasks.loop(seconds=10)
+    async def daily_question(self):
             now = datetime.now(pytz.timezone('US/Eastern'))
-                if now.hour == 19 and now.minute == 7:
+            if now.hour == 6 and now.minute == 0:
                 embed = discord.Embed(
                         title='Daily Question',
                         description=random.choice(icebreaker_questions),
                         colour=0x98FB98
                 )
-                embed.set_footer(text=f"Ran by: {ctx.author}")
-                embed.set_author(name=ctx.author, icon_url=self.bot.user.avatar.url)
-                channel = self.bot.get_channel(1211032887114342510)
+                embed.set_footer(text="Automated by Doopliss")
+                channel = await self.bot.fetch_channel(1211032887114342510)
                 await channel.send(embed=embed)
 
 def setup(bot):
