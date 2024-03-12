@@ -19,7 +19,7 @@ icebreaker_questions = [
     "If you could upload your consciousness into a computer like in a science fiction game, what would be the first thing you'd do in your new digital form?",
     "If you had to survive a zombie apocalypse using only items found in computer games, what would be your go-to weapon and why?",
     "If you could bring one piece of futuristic technology from a video game into the present day, what would it be and how would it revolutionize society?",
-        "If video game characters were real, which one do you think would make the best roommate and why?",
+    "If video game characters were real, which one do you think would make the best roommate and why?",
     "If you could create a video game based on your life, what would the title be and what would the objective be?",
     "If you were a character in a video game, what special power or ability would you have and how would you use it to your advantage?",
     "If you could live inside any computer program or software, which one would it be and why?",
@@ -72,7 +72,7 @@ icebreaker_questions = [
     "If you could have any video game character's significant other, who would you choose and why?",
     "If you could have any video game character's friendship and/or nemesis, who would you choose and why?",
     "If you could have any video game character's catchphrase, which one would you choose and why?",
-        "If you could have any superpower, what would it be and why?",
+    "If you could have any superpower, what would it be and why?",
     "What's the most adventurous thing you've ever done?",
     "If you could travel anywhere in the world right now, where would you go and why?",
     "What's your favorite book/movie/TV show and why?",
@@ -120,7 +120,7 @@ icebreaker_questions = [
     "What's your favorite way to spend a day off?",
     "If you could live in any city in the world, where would it be?",
     "What's the most important lesson life has taught you so far?",
-        "If you could have dinner with any fictional character, who would it be and why?",
+    "If you could have dinner with any fictional character, who would it be and why?",
     "What's your favorite quote and why does it resonate with you?",
     "If you could have any career for a day, what would it be and why?",
     "What's the most memorable dream you've ever had?",
@@ -244,17 +244,17 @@ class DailyQ(commands.Cog):
         self.bot = bot
         self.daily_question.start()
 
-    @tasks.loop(seconds=10)
+    @tasks.loop(seconds=120)
     async def daily_question(self):
             now = datetime.now(pytz.timezone('US/Eastern'))
-            if now.hour == 6 and now.minute == 0:
+            if now.hour == 6 and now.minute == 0 :
                 embed = discord.Embed(
                         title='Daily Question',
                         description=random.choice(icebreaker_questions),
                         colour=0x98FB98
                 )
                 embed.set_footer(text="Automated by Doopliss")
-                channel = await self.bot.fetch_channel(1211032887114342510)
+                channel = await self.bot.fetch_channel(1262547118430621806)
                 await channel.send(embed=embed)
 
 def setup(bot):

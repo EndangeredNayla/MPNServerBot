@@ -87,6 +87,13 @@ class Fun(commands.Cog):
         rch = random.choice(ch)
         await ctx.respond(f"You got **{rch}**")
 
+    #Coin Flip Command
+    @commands.slash_command(aliases=["bonus_stars"])
+    async def bonusstars(self, ctx):
+        """Flip a coin, heads or tails, your fate"""
+        ch = ["Stars", "Ztars"]
+        rch = random.choice(ch)
+        await ctx.respond(f"You are playing with Bonus **{rch}**")
 
     #Reverse Text Command
     @commands.slash_command()

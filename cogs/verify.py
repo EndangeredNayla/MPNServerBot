@@ -37,7 +37,7 @@ class Verification(commands.Cog):
 
         if int(msg.content) == result:
             # Get the verified role (replace 'Verified' with your actual role name)
-            role = discord.utils.get(ctx.guild.roles, name="Mayhem Player")
+            role = discord.utils.get(ctx.guild.roles, name="Server Member")
             if role:
                 await ctx.author.add_roles(role)  # Assign the role to the user
                 await ctx.author.send("Verification successful! You've been granted the Verified role.")
