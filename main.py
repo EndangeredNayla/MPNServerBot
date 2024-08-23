@@ -1,69 +1,69 @@
-#***************************************************************************#
-#                                                                           #
-# Doopliss - A Discord Bot For Me.                                          #
-# https://github.com/NoraHanegan/Doopliss                                   #
-# Copyright (C) 2021 Nora Hanegan. All rights reserved.                     #
-#                                                                           #
-# License:                                                                  #
-# MIT License https://www.mit.edu/~amini/LICENSE.md                         #
-#                                                                           #
-#***************************************************************************#
 import discord
+from discord.ext import commands, tasks
+from pterosocket import PteroSocket
+import json
 import os
-import platform
 
-from cogs.base import Base
-from cogs.fun import Fun
-from cogs.marioparty import MarioParty
-from cogs.toontown import Toontown
-from cogs.verify import Verification
-from cogs.gsheets import GSheets
-from cogs.results_poster import RPoster
-from cogs.moderation import Moderation
-#from cogs.daily_question import DailyQ
+# Discord bot setup
+intents = discord.Intents.default()
+intents.messages = True
+bot = commands.Bot(command_prefix='/', intents=intents)
 
-from discord.ext import tasks
-from discord.ext import commands
+config_file_path = 'config.json'
 
-#Intents
-intents = discord.Intents.all()
+def_config_data = {
+    "api_key": "",
+    "servers": {
+    },
+    "origin": "",
+    "disc_token": ""
+}
 
-#Define Client
-bot = commands.Bot(description="Doopliss", command_prefix=commands.when_mentioned_or("/"), intents=intents, activity=discord.Game(name='around with different names'), guild_ids=[1048370760776962159])
+# Write to config.json
+if os.path.exists(config_file_path):
+    # Read the existing configuration
+    with open(config_file_path, 'r') as config_file:
+        config_data = json.load(config_file)
+else:
+    # Write the default configuration to config.json
+    with open(config_file_path, 'w') as config_file:
+        json.dump(def_config_data, config_file, indent=4)
+    config_data = def_config_data  # Use the default data
 
 @bot.event
 async def on_ready():
-  memberCount = len(set(bot.get_all_members()))
-  serverCount = len(bot.guilds)
-  print("                                                                ")
-  print("################################################################") 
-  print(f" ______                            __    _                     ")
-  print(f"|_   _ `.                         [  |  (_)                    ")
-  print(f"  | | `. \  .--.    .--.   _ .--.  | |  __   .--.   .--.       ")
-  print(f"  | |  | |/ .'`\ \/ .'`\ \[ '/'`\ \| | [  | ( (`\] ( (`\]      ")
-  print(f" _| |_.' /| \__. || \__. | | \__/ || |  | |  `'.'.  `'.'.      ")
-  print(f"|______.'  '.__.'  '.__.'  | ;.__/[___][___][\__) )[\__) )     ")
-  print(f"                           [__|              \___/  \___/      ")
-  print("                                                                ")
-  print("################################################################") 
-  print("Running as: " + bot.user.name + "#" + bot.user.discriminator)
-  print(f'With Client ID: {bot.user.id}')
-  print("\nBuilt With:")
-  print("Python " + platform.python_version())
-  print("Py-Cord " + discord.__version__)
+    print(f'Logged in as {bot.user}!')
+    read_messages.start()  # Start the read_messages loop
 
+@tasks.loop(seconds=5)  # Adjust the interval as needed
+async def read_messages():
+    for server_info in servers.values():
+        channel = bot.get_channel(server_info["channel_id"])
+        if channel:
+            messages = await channel.history(limit=10).flatten()
+            for message in messages:
+                if last_message_ids[server_info["id"]] is None or message.id > last_message_ids[server_info["id"]]:
+                    await channel.send(f"{message.author}: {message.content}")  # Send new message content
+                    last_message_ids[server_info["id"]] = message.id  # Update last message ID
 
-#Boot Cogs
-bot.add_cog(Base(bot))
-bot.add_cog(Fun(bot))
-bot.add_cog(MarioParty(bot))
-bot.add_cog(Verification(bot))
-bot.add_cog(GSheets(bot))
-bot.add_cog(RPoster(bot))
-bot.add_cog(Moderation(bot))
-#bot.add_cog(DailyQ(bot))
+@bot.command()
+@discord.option("server", type=discord.SlashCommandOptionType.string, description="Select a server to start")
+async def start(ctx, server: str):
+    server_info = next((s for s in servers.values() if s["id"] == server), None)  # Get server info
+    if server_info:
+        channel_id = server_info["channel_id"]
+        ptero_socket = PteroSocket(origin, api_key, server, auto_connect=False)
+        await ptero_socket.connect()
+        await ctx.respond(f"Server {server_info['name']} started!")  # Use server name
 
-#Run Bot
-#keep_alive()
-TOKEN = os.environ.get("TOKEN_DOOPLISS")
-bot.run(TOKEN)
+@bot.command()
+@discord.option("server", type=discord.SlashCommandOptionType.string, description="Select a server to stop")
+async def stop(ctx, server: str):
+    server_info = next((s for s in servers.values() if s["id"] == server), None)  # Get server info
+    if server_info:
+        ptero_socket = PteroSocket(origin, api_key, server, auto_connect=False)
+        await ptero_socket.close()
+        await ctx.respond(f"Server {server_info['name']} stopped!")  # Use server name
+
+# Run the bot
+bot.run(disc_token)

@@ -1,10 +1,5 @@
-flask
-dadjokes
+node-events
 requests
-urllib3
+websockets
 aiohttp
-py-cord==2.2.2
-google_spreadsheet
-google-auth-oauthlib
-pandas
-pytz
+py-cord
